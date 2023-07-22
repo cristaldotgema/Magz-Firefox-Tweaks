@@ -119,9 +119,9 @@ Optionally: Can change the position of the sidebery bar icon on the top menu bar
 ## Acknowledgements / Credits
 
 ### Code:
-- [Firefox Vertical Tabs](https://github.com/ranmaru22/firefox-vertical-tabs) by ranmaru22. (Used the "userChrome.css" from this)
+- [Firefox Vertical Tabs](https://github.com/ranmaru22/firefox-vertical-tabs) by ranmaru22. (Used the "userChrome.css" from this, for the upper menu bar tweak and taking off horizontal tab - originally intended to be used with a different sidebar add-on)
 
-- ["Yet another Sidebery setup"](https://www.reddit.com/r/FirefoxCSS/comments/rmi8dg/yet_another_sidebery_setup/) by a deleted Reddit user. (Used the "userChrome.css" from this, and used the sidebery stylesheet as a base - heavily edited)
+- ["Yet another Sidebery setup"](https://www.reddit.com/r/FirefoxCSS/comments/rmi8dg/yet_another_sidebery_setup/) by a deleted Reddit user. (Used the "userChrome.css" from this - that makes the sidebar collapse when not hovered and so on. Used the sidebery stylesheet as a base for appearance, but heavily edited and changed code - it wasn't fully working 2 years later after all)
 
 - [Tabliss's developer](https://github.com/joelshepherd/) - The homepage setup uses the Tabliss add-on
 
