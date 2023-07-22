@@ -1,0 +1,26 @@
+/* These were better than own old setup was using that broke with the Firefox update */
+
+/* if for whatever reason, don't want one of these files active, just comment it out like this */
+/* */
+
+
+/* from https://github.com/ranmaru22/firefox-vertical-tabs */
+/* takes off horizontal tabs on top. without it, will see horizontal tabs up top by default.*/
+/* if have this on, suggest to have sidebery add-on turned on, and available in private browsing too. otherwise no tabs visible. */
+/* this was the "userChrome.css" in the link above. */
+
+@import url("./BrowserCustom.css");
+
+
+
+
+/* version from "yet another sidebery custom" https://www.reddit.com/r/FirefoxCSS/comments/rmi8dg/yet_another_sidebery_setup/ */
+/* requires preset under sidebery general section have fox emoji 🦊, as "title preface value". "sideberry-data.json" automatically do that. */
+/* this was the "userChrome.css" in the link above */
+/* it mostly adds the hover sidebar tabs effect, and works in tandem with sideberry style settings in "sidebery-data.json" */ 
+
+@import url("./SideberyCustom.css");
+
+
+
+
