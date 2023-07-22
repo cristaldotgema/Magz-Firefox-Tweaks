@@ -133,7 +133,7 @@ These were used in the demonstration as example images. They are not in the gith
 
 #### Example Background Images by:
 - _ Roitz _ 
-- killian ng 
+- killian Ng 
 - nymria 
 - Senbon Umishima 
 - siun_5513 
@@ -141,6 +141,7 @@ These were used in the demonstration as example images. They are not in the gith
 - swdrk_ 
 - lirseven 
 - zephyo
+- Atey Ghailan
 
 #### Example themes:
 - Dark neon. 
