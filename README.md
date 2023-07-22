@@ -24,9 +24,12 @@ For now, includes:
 ![Example of Vertical Tab Sidebar in full menu mode](examples/Screenshot_3.jpg)
 
 #### Videos:
-(insert showcase1.mp4 link)
 
-(insert showcase2.mp4 link)
+Demonstration of Tabliss "custome homepage" and Sidebery 5 customization
+https://github.com/cristaldotgema/Magz-Firefox-Tweaks/blob/main/examples/Showcase1.mp4
+
+Vertical Sidebar Adapting to Different Firefox Themes
+https://github.com/cristaldotgema/Magz-Firefox-Tweaks/blob/main/examples/Showcase2.mp4
 
 #### Template:
 
@@ -45,7 +48,6 @@ Will see this when first import Tabliss data though:
 
 (Click the "Code" button, then "Download .Zip")
 
-(Insert screenshot of Code button zip thing)
 
 - Unzip the file somewhere you'll remember.
 
@@ -54,7 +56,7 @@ Will see this when first import Tabliss data though:
 - Install [Tabliss](https://tabliss.io/) add-on. (or test out [the web version](https://web.tabliss.io/) first).
 - Click the cog wheel (settings) on the new Tabliss page, scroll down and click "import" settings.
 
-![Tabliss Settings Import]
+![Tabliss Import Settings Screenshot](examples/tabliss_settings.jpg)
 
 - Import the "tabliss.json" file. It will be in the .zip file downloaded from the github repository, in the "Tabliss" section.
 
@@ -78,6 +80,8 @@ Will see this when first import Tabliss data though:
 - In the Sidebery Settings menu, click "help" section, then "import add-on data" and select the "sidebery-data.json" file in the "sidebery" folder from unzipped github folder.
 
 - Close Firefox, and open it again for both the Sidebery style settings and the Browser settings to take effect.
+
+  
 ## Acknowledgements / Credits
 
 ### Code:
