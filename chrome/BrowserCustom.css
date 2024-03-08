@@ -1,6 +1,3 @@
-
-
-
 :root {
     /* delay before expanding tabs, set to '0' for no delay */
     --delay: 0.5s;
@@ -18,7 +15,7 @@
     }
 
     :root:not([customizing="true"]) #nav-bar:not([inFullscreen]) {
-        padding-left: 80px;
+        padding-left: 80px !important;
     }
 
     :root:not([customizing="true"]) #TabsToolbar .titlebar-buttonbox-container {
@@ -31,7 +28,8 @@
 }
 
 /* Linux/GTK specific styles */
-@media (-moz-gtk-csd-available) {
+@media (-moz-gtk-csd-available),
+       (-moz-platform: linux) {
     .browser-toolbar:not(.titlebar-color){ /* Fixes wrong coloring applied with --toolbar-bgcolor by Firefox (#101) */
         background-color: transparent !important;
         box-shadow: none !important;
@@ -43,6 +41,11 @@
 
     #toolbar-menubar {
         padding-top: 0px !important;
+    }
+
+    /* Fixes issue in FF 123 where minimize, close, and maximize buttons no longer work. */
+    :root[tabsintitlebar] #titlebar {
+        will-change: auto !important;
     }
 
     :root:not([customizing="true"]) #toolbar-menubar[inactive]+#TabsToolbar .titlebar-buttonbox-container {
@@ -129,14 +132,14 @@
             }
         }
     }
-    
+
     /* Hide window buttons in fullscreen */
     #navigator-toolbox[style*="margin-top: -"] .titlebar-buttonbox-container,
     [inDOMFullscreen="true"] .titlebar-buttonbox-container {
         transform: translateY(-100px)
     }
-    
-    
+
+
 }
 
 /* Windows specific styles */
@@ -156,26 +159,26 @@
         padding-top: .5px !important; /* This makes it possible to drag the maximized window. */
         margin-left: -80px; /* Removes the space left when hiding .titlebar-buttonbox-container */
     }
-    
-    #back-button { 
-		margin-top: -.5px !important; 
-	}
-	
-	#forward-button { 
-		margin-top: -.5px !important; 
-	}
-	
-	#reload-button { 
-		margin-top: -.5px !important; 
-	}
-    
-	#PanelUI-button {
-		margin-top: -.5px !important; 
-	}
-    
-	#nav-bar-overflow-button{
-		margin-top: -.5px !important; 
-	}
+
+    #back-button {
+        margin-top: -.5px !important;
+    }
+
+    #forward-button {
+        margin-top: -.5px !important;
+    }
+
+    #reload-button {
+        margin-top: -.5px !important;
+    }
+
+    #PanelUI-button {
+        margin-top: -.5px !important;
+    }
+
+    #nav-bar-overflow-button{
+        margin-top: -.5px !important;
+    }
 
     :root {
         --uc-toolbar-height: 32px;
@@ -213,14 +216,20 @@
 
     /* For a rounded button design, uncomment both lines in .titlebar-buttonbox. */
     .titlebar-buttonbox {
-        z-index:3 !important;
+        z-index: 3 !important;
         /* padding-right:3px; */
     }
 
     .titlebar-buttonbox * {
         /* border-radius: 5px; */
-        width:35px;
-        height:38px;
+        width: 35px;
+        height: 38px;
+        pointer-events: auto;
+    }
+
+    #titlebar {
+        z-index: 3;
+        pointer-events: none;
     }
 
     #main-menubar {
@@ -269,14 +278,15 @@
     display: none;
 }
 
-[sidebarcommand*="tabcenter"] #sidebar,
-#sidebar-box[sidebarcommand*="tabcenter"] {
+#main-window:not([chromehidden~="toolbar"]) [sidebarcommand*="tabcenter"] #sidebar,
+#main-window:not([chromehidden~="toolbar"]) #sidebar-box[sidebarcommand*="tabcenter"]:not([hidden="true"]) {
+    display: block !important;
     min-width: 48px !important;
     max-width: 48px !important;
     width: 48px;
 }
 
-#sidebar-box[sidebarcommand*="tabcenter"]:not([hidden]) {
+#main-window:not([chromehidden~="toolbar"]) #sidebar-box[sidebarcommand*="tabcenter"]:not([hidden]) {
     display: block;
     position: var(--positionX2);
     min-width: 48px;
@@ -288,14 +298,13 @@
     bottom: 0;
 }
 
-/* use :where() selector to lower specificity */
-:where(#main-window[inFullscreen]) #sidebar-box[sidebarcommand*="tabcenter"]:not([hidden]) {
+#main-window[inFullscreen]:not([chromehidden~="toolbar"]) #sidebar-box[sidebarcommand*="tabcenter"]:not([hidden]):not(:hover) {
     min-width: var(--fullscreen-sidebar-width) !important;
     max-width: var(--fullscreen-sidebar-width) !important;
 }
 
-#sidebar-box[sidebarcommand*="tabcenter"]:hover #sidebar,
-#sidebar-box[sidebarcommand*="tabcenter"]:hover {
+#main-window:not([chromehidden~="toolbar"]) #sidebar-box[sidebarcommand*="tabcenter"]:hover #sidebar,
+#main-window:not([chromehidden~="toolbar"]) #sidebar-box[sidebarcommand*="tabcenter"]:hover {
     min-width: 10vw !important;
     width: 30vw !important;
     max-width: 200px !important;
@@ -310,8 +319,8 @@
 }
 
 @media (width >= 1200px) {
-    #sidebar-box[sidebarcommand*="tabcenter"]:hover #sidebar,
-    #sidebar-box[sidebarcommand*="tabcenter"]:hover {
+    #main-window:not([chromehidden~="toolbar"]) #sidebar-box[sidebarcommand*="tabcenter"]:hover #sidebar,
+    #main-window:not([chromehidden~="toolbar"]) #sidebar-box[sidebarcommand*="tabcenter"]:hover {
         max-width: 250px !important;
     }
 }
@@ -325,11 +334,11 @@
     height: 100%;
 }
 
-#main-window:not([inFullscreen]) #sidebar-box[sidebarcommand*="tabcenter"]:not([hidden]) ~ #appcontent {
+#main-window:not([inFullscreen]):not([chromehidden~="toolbar"]) #sidebar-box[sidebarcommand*="tabcenter"]:not([hidden]) ~ #appcontent {
     margin-left: var(--positionX1);
 }
 
-#main-window[inFullscreen]:not([inDOMFullscreen]) #sidebar-box[sidebarcommand*="tabcenter"]:not([hidden]) ~ #appcontent {
+#main-window[inFullscreen]:not([inDOMFullscreen]):not([chromehidden~="toolbar"]) #sidebar-box[sidebarcommand*="tabcenter"]:not([hidden]) ~ #appcontent {
     margin-left: var(--fullscreen-sidebar-width);
 }
 
@@ -360,4 +369,9 @@
     #menubar-items {
         display: none !important;
     }
+}
+
+/* Up the z-index of the top bar so that the bookmarks toolbar is above the sidebar. */
+#navigator-toolbox {
+    z-index: 2 !important;
 }
