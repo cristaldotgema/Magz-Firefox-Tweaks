@@ -78,7 +78,7 @@ Will see this when first import Tabliss data though:
 
 - Install [Sidebery 5 beta](https://github.com/mbnuqw/sidebery) from the Github page.
   
-- Approve the add-on installation and give it permission to be enabled during private browsing when it asks (otherwise, won't have visible tabs later on).
+- Approve the add-on installation and give it permission to be enabled during private browsing when it asks (otherwise, won't have visible tabs later on). This can also be turned on in Add-on Manager, by going into "Sidebery" settings and select "Run in Private Windows: allow".
 
 - Type ``about:config`` in browser url bar. Search ``toolkit.legacyUserProfileCustomizations.stylesheets`` and change to "true", if it wasn't before. This allows for browser profile customization.
 
@@ -160,3 +160,4 @@ These were used in the demonstration as example images. They are not in the gith
 
 #### Time:
 (For reference: Published July 21, 2023 - using latest Firefox at time, version 115.0.2)
+(Updated: March 8, 2024 - fixed BrowserCustom.css, for Firefox version 123.0.1)
